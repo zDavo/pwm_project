@@ -1,0 +1,190 @@
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark main-nav" style="background-color: rgba(242, 200, 75	, 0.8);">
+
+	<div class="w-100 d-lg-none">
+		<button class="navbar-toggler position-absolute" type="button" data-toggle="collapse" data-target=".dual-nav" style="outline-color: grey;">
+		    <span class="navbar-toggler-icon"></span>
+		</button>
+	
+		
+		<div class="container-sm order-2 text-center" data-toggle="navbar-brand" data-target="#title">
+				<ul class="navbar-nav w-100">
+					<a class="nav-link" href="/">La Vecchia Cervia</a>
+		   		</ul>
+		</div>
+	</div>
+    
+
+        <ul class="nav navbar-nav flex-fill w-100 flex-nowrap">
+	  	 	<div class="navbar-collapse collapse dual-nav w-100 order-1 order-sm-0">
+	            <ul class="navbar-nav">
+	                <li class="nav-item active">
+	                    <a class="nav-link pl-0" href="/">Home <span class="sr-only">Home</span></a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" href="/order">Ordina ora</a>
+	                </li>
+	                <li class="nav-item dropdown">
+		        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          			Menu
+		        		</a>
+		        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		          			<a class="dropdown-item" href="/menu#pizze">Le nostre pizze</a>
+		          			<a class="dropdown-item" href="/menu#birre">Beer Of Excellence</a>
+			        	</div>
+			      	</li>
+	            </ul>
+	        </div>
+        </ul>
+        <ul class="nav navbar-nav flex-fill justify-content-center">
+            <div id="title" class="navbar-brand fixed text-center pl-3 d-none d-lg-block"><a class="nav-link" href="/">  La Vecchia Cervia  </a></div>
+        </ul>
+        <ul class="nav navbar-nav flex-fill w-100 justify-content-end">
+            <div id="log" class="navbar-collapse collapse dual-nav w-50 order-2">
+		            <ul class="nav navbar-nav ml-auto">
+						<li class="nav-item dropdown d-none-guest">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							 <i class="fas fa-user"></i> <span id="loggedName"></span>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href="#">Profilo</a>
+								<a class="dropdown-item" href="#">Ordini</a>
+								<a class="dropdown-item" href="/login/logout">Logout</a>
+							</div>
+						</li>
+		                <button type="button" class="nav-item btn btn-outline-secondary my-2 my-sm-0 list-inline-item d-none-logged" data-toggle="modal" data-target="#login">
+							Login
+						</button>
+		                <button type="button" class="btn btn-outline-secondary my-2 my-sm-0 list-inline-item d-none-logged" data-toggle="modal" data-target="#register">
+							Registrati
+						</button>
+
+						<button type="button" class="btn btn-outline-secondary list-inline-item" data-toggle="modal" data-target="#cartModal">
+						    <i class="fas fa-shopping-cart"></i> Carrello
+						</button>  
+		            </ul>
+	        </div>
+        </ul>
+ 
+</nav>
+
+
+
+
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Your Shopping Cart
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-image">
+          <thead>
+            <tr>
+              <th scope="col">Prodotto</th>
+              <th scope="col">Prezzo</th>
+              <th scope="col">Quantità</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vans Sk8-Hi MTE Shoes</td>
+              <td>89$</td>
+              <td class="qty"><input type="number" min="0" class="form-control" id="input1" value="1"></td>
+              <td>
+              </td>
+            </tr>
+          </tbody>
+        </table> 
+        <div class="d-flex justify-content-end">
+          <h5>Totale: <span class="price text-success"></span></h5>
+        </div>
+      </div>
+      <div class="modal-footer border-top-0 d-flex justify-content-between">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Invia ordine</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- finestre modali -->
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  	<div class="modal-dialog modal-dialog-centered" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<h5 class="modal-title" id="modalTitle">Registrati</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+      		<div class="modal-body">
+        		<form id="formRegister" method="POST" action="/register">
+        			<div class="form-group">
+		    			<label for="inRegNome">Nome</label>
+		    			<input type="text" class="form-control" id="inRegNome" required="">
+		  			</div>
+          			<div class="form-group">
+		    			<label for="inRegCognome">Cognome</label>
+		    			<input type="text" class="form-control" id="inRegCognome" required="">
+		  			</div>
+		  			<div class="form-group">
+		    			<label for="inRegEmail">Email</label>
+		    			<input type="email" class="form-control" id="inRegEmail" name="email" required="">
+				  	</div>
+				  	<div class="form-group">
+		    			<label for="inRegPsw">Password</label>
+		    			<input type="password" class="form-control" id="inRegPsw" required="">
+		  			</div>
+		  			<button type="submit" class="btn btn-primary">Registrati</button>
+				</form>
+      		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="login" role="dialog">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalTitle">Login</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span>&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+					<form id="formLogin" method="POST" action="/login">
+							<div class="form-group">
+		 						<label for="inLogEmail">Email</label>
+								<input type="email" class="form-control" id="inLogEmail" name="email">
+							</div>
+							<div class="form-group">
+								<label for="inLogPsw">Password</label>
+								<input type="password" class="form-control" id="inLogPsw">
+							</div>
+							<button type="submit" class="btn btn-primary">Accedi</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

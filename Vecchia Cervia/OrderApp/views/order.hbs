@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/map.css" />
+
+    <title>La Vecchia Cervia</title>
+  </head>
+  <body style="background-image: linear-gradient(coral, #f56f42)">
+  	<header></header>
+  	<div class="carousel"></div>
+  	<footer></footer>
+
+    <!-- Optional JavaScript --> 
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/popper.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/jquery.includeHTML.min.js"></script>
+
+    
+    <script type="text/javascript">
+    	$(document).ready(() => {
+    		$('header').loadHTML('html/navbar.html');
+    		$('div.carousel').loadHTML('html/carousel.html');
+    		$('footer').loadHTML('html/footer.html');
+    	})
+    </script>
+
+
+  </body>
+</html>
